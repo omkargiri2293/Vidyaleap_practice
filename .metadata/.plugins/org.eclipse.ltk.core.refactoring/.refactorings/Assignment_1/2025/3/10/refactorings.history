@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Assignment_1/empty.syscfg&apos; to &apos;Assignment_1.syscfg&apos;" description="Rename resource &apos;empty.syscfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="empty.syscfg" name="Assignment_1.syscfg" stamp="1741154032458" updateReferences="true"/>
-</session>

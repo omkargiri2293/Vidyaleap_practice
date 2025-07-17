@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;timer_assi_4/empty.syscfg&apos; to &apos;timer_assi_4.syscfg&apos;" description="Rename resource &apos;empty.syscfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="empty.syscfg" name="timer_assi_4.syscfg" stamp="1740473255527" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;timer_assi_4/empty.c&apos; to &apos;timer_assi_4.c&apos;" description="Rename resource &apos;empty.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="empty.c" name="timer_assi_4.c" stamp="1740473342858" updateReferences="true"/>
-</session>

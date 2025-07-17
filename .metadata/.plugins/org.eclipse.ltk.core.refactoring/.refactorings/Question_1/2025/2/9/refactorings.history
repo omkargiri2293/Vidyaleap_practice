@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Question_1/empty.c&apos; to &apos;Question_1.c&apos;" description="Rename resource &apos;empty.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="empty.c" name="Question_1.c" stamp="1740466209746" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Question_1/empty.syscfg&apos; to &apos;Question_1.syscfg&apos;" description="Rename resource &apos;empty.syscfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="empty.syscfg" name="Question_1.syscfg" stamp="1740466234277" updateReferences="true"/>
-</session>
