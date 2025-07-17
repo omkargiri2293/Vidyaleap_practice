@@ -1,0 +1,45 @@
+
+**** Build of configuration Debug for project Assignment_1 ****
+
+"C:\\ti\\ccs1281\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../Assignment_1.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.22.0/sysconfig_cli.bat" --script "D:/vidyaleap ccs/Assignment_1/Assignment_1.syscfg" -o "." -s "C:/ti/mspm0_sdk_2_03_00_07/.metadata/product.json" --compiler ticlang
+Running script...
+Validating...
+Generating Code (Assignment_1.syscfg)...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\device_linker.cmd...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\device.opt...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\device.cmd.genlibs...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\ti_msp_dl_config.c...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\ti_msp_dl_config.h...
+Writing D:\vidyaleap ccs\Assignment_1\Debug\Event.dot...
+Finished building: "../Assignment_1.syscfg"
+ 
+Building file: "../Assignment_1.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/Assignment_1" -I"D:/vidyaleap ccs/Assignment_1/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"Assignment_1.d_raw" -MT"Assignment_1.o"  @"./device.opt"  -o"Assignment_1.o" "../Assignment_1.c"
+../Assignment_1.c:7:1: warning: '/*' within block comment [-Wcomment]
+/* NAME- OMKAR GIRI
+^
+1 warning generated.
+Finished building: "../Assignment_1.c"
+ 
+Building file: "ti_msp_dl_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/Assignment_1" -I"D:/vidyaleap ccs/Assignment_1/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"ti_msp_dl_config.d_raw" -MT"ti_msp_dl_config.o"  @"./device.opt"  -o"ti_msp_dl_config.o" "ti_msp_dl_config.c"
+Finished building: "ti_msp_dl_config.c"
+ 
+Building file: "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/Assignment_1" -I"D:/vidyaleap ccs/Assignment_1/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"startup_mspm0g350x_ticlang.d_raw" -MT"startup_mspm0g350x_ticlang.o"  @"./device.opt"  -o"startup_mspm0g350x_ticlang.o" "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+Finished building: "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+ 
+Building target: "Assignment_1.out"
+Invoking: Arm Linker
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wl,-m"Assignment_1.map" -Wl,-i"C:/ti/mspm0_sdk_2_03_00_07/source" -Wl,-i"D:/vidyaleap ccs/Assignment_1" -Wl,-i"D:/vidyaleap ccs/Assignment_1/Debug/syscfg" -Wl,-i"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="Assignment_1_linkInfo.xml" -Wl,--rom_model -o "Assignment_1.out" "./Assignment_1.o" "./ti_msp_dl_config.o" "./startup_mspm0g350x_ticlang.o" -Wl,-l"./device_linker.cmd"  -Wl,-ldevice.cmd.genlibs -Wl,-llibc.a 
+Finished building target: "Assignment_1.out"
+ 
+
+**** Build Finished ****

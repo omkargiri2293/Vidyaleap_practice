@@ -1,0 +1,90 @@
+
+**** Build of configuration Debug for project keypad_assignment ****
+
+"C:\\ti\\ccs1281\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../empty.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.22.0/sysconfig_cli.bat" --script "D:/vidyaleap ccs/keypad_assignment/empty.syscfg" -o "." -s "C:/ti/mspm0_sdk_2_03_00_07/.metadata/product.json" --compiler ticlang
+Running script...
+Validating...
+Generating Code (empty.syscfg)...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\device_linker.cmd...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\device.opt...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\device.cmd.genlibs...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\ti_msp_dl_config.c...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\ti_msp_dl_config.h...
+Writing D:\vidyaleap ccs\keypad_assignment\Debug\Event.dot...
+Finished building: "../empty.syscfg"
+ 
+Building file: "../empty.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/keypad_assignment" -I"D:/vidyaleap ccs/keypad_assignment/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"empty.d_raw" -MT"empty.o"  @"./device.opt"  -o"empty.o" "../empty.c"
+subdir_rules.mk:9: recipe for target 'empty.o' failed
+../empty.c:61:17: warning: call to undeclared function 'delay_ms'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+                delay_ms(50);// Debounce delay
+                ^
+../empty.c:85:58: error: use of undeclared identifier 'row'; did you mean 'pow'?
+                       DL_GPIO_setPins(GPIO_PORT_B_PORT, row[i]);  // Set all rows to high
+                                                         ^~~
+                                                         pow
+C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\include\c\math.h:458:26: note: 'pow' declared here
+_CODE_ACCESS double      pow(double x, double y);
+                         ^
+../empty.c:85:58: error: subscript of pointer to function type 'double (double, double)'
+                       DL_GPIO_setPins(GPIO_PORT_B_PORT, row[i]);  // Set all rows to high
+                                                         ^~~
+../empty.c:91:57: error: use of undeclared identifier 'row'; did you mean 'pow'?
+                    DL_GPIO_clearPins(GPIO_PORT_B_PORT, row[i]); // Set current row to low
+                                                        ^~~
+                                                        pow
+C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\include\c\math.h:458:26: note: 'pow' declared here
+_CODE_ACCESS double      pow(double x, double y);
+                         ^
+../empty.c:91:57: error: subscript of pointer to function type 'double (double, double)'
+                    DL_GPIO_clearPins(GPIO_PORT_B_PORT, row[i]); // Set current row to low
+                                                        ^~~
+../empty.c:95:70: error: use of undeclared identifier 'col'
+                            if (!(DL_GPIO_readPins(GPIO_PORT_A_PORT, col[j]))) {
+                                                                     ^
+../empty.c:97:63: error: use of undeclared identifier 'key'; did you mean 'keys'?
+                                printf(" Key pressed: %c \n", key[i][j]);  // Print the key
+                                                              ^~~
+                                                              keys
+../empty.c:13:6: note: 'keys' declared here
+char keys[ROWS][COLUMNS] = {
+     ^
+../empty.c:99:77: error: use of undeclared identifier 'col'
+                                while (!(DL_GPIO_readPins(GPIO_PORT_A_PORT, col[j])) );
+                                                                            ^
+../empty.c:101:46: error: use of undeclared identifier 'DELAY'
+                                delay_cycles(DELAY);
+                                             ^
+../empty.c:105:53: error: use of undeclared identifier 'row'; did you mean 'pow'?
+                    DL_GPIO_setPins(GPIO_PORT_PORT, row[i]);  // Set row back to high
+                                                    ^~~
+                                                    pow
+C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\include\c\math.h:458:26: note: 'pow' declared here
+_CODE_ACCESS double      pow(double x, double y);
+                         ^
+../empty.c:105:53: error: subscript of pointer to function type 'double (double, double)'
+                    DL_GPIO_setPins(GPIO_PORT_PORT, row[i]);  // Set row back to high
+                                                    ^~~
+../empty.c:105:37: error: use of undeclared identifier 'GPIO_PORT_PORT'
+                    DL_GPIO_setPins(GPIO_PORT_PORT, row[i]);  // Set row back to high
+                                    ^
+1 warning and 11 errors generated.
+gmake: *** [empty.o] Error 1
+Building file: "ti_msp_dl_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/keypad_assignment" -I"D:/vidyaleap ccs/keypad_assignment/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"ti_msp_dl_config.d_raw" -MT"ti_msp_dl_config.o"  @"./device.opt"  -o"ti_msp_dl_config.o" "ti_msp_dl_config.c"
+Finished building: "ti_msp_dl_config.c"
+ 
+Building file: "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1281/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" -c @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -I"D:/vidyaleap ccs/keypad_assignment" -I"D:/vidyaleap ccs/keypad_assignment/Debug" -I"C:/ti/mspm0_sdk_2_03_00_07/source/third_party/CMSIS/Core/Include" -I"C:/ti/mspm0_sdk_2_03_00_07/source" -gdwarf-3 -MMD -MP -MF"startup_mspm0g350x_ticlang.d_raw" -MT"startup_mspm0g350x_ticlang.o"  @"./device.opt"  -o"startup_mspm0g350x_ticlang.o" "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+Finished building: "C:/ti/mspm0_sdk_2_03_00_07/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

@@ -1,0 +1,3 @@
+"./Question_4.o"
+-ldevice.cmd.genlibs
+-llibc.a

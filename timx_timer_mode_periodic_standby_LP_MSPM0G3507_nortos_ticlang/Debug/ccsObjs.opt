@@ -1,0 +1,3 @@
+"./timx_timer_mode_periodic_standby.o"
+-ldevice.cmd.genlibs
+-llibc.a

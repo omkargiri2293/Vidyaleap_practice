@@ -1,0 +1,3 @@
+"./timx_timer_mode_capture_edge_capture.o"
+-ldevice.cmd.genlibs
+-llibc.a

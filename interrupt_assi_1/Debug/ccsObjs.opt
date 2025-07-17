@@ -1,0 +1,3 @@
+"./interrupt_aasi_1.o"
+-ldevice.cmd.genlibs
+-llibc.a

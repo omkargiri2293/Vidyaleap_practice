@@ -1,0 +1,50 @@
+/*
+ * Baremetal.h
+ *
+ *  Created on: 20-Mar-2025
+ *      Author: omkar
+ */
+
+#ifndef LIB_BAREMETAL_H_
+#define LIB_BAREMETAL_H_
+
+
+
+void enablePort(GPIO_Regs*Port);
+
+void initDigitalOutput(GPIO_Regs* Port, uint8_t pinCMIndex, uint8_t Pin);
+
+void enableOutput(GPIO_Regs*Port, uint32_t Pin);
+
+void setPins(GPIO_Regs*Port, uint32_t Pin);
+
+void togglePins(GPIO_Regs*Port, uint32_t Pin);
+
+void clearPins(GPIO_Regs*Port, uint32_t Pin);
+
+void GPIO_reset(GPIO_Regs* Port);
+
+void initDigitalInputfeatures(uint32_t pinCMIndex,
+                      DL_GPIO_INVERSION inversion,
+                      DL_GPIO_RESISTOR internalResistor,
+                      DL_GPIO_HYSTERESIS hysteresis,
+                      DL_GPIO_WAKEUP wakeup);
+
+uint32_t readPins(GPIO_Regs* Port, uint32_t pins);
+
+void initDigitalOutputfeatures(uint32_t pinCMIndex,
+                               DL_GPIO_INVERSION inversion,
+                               DL_GPIO_RESISTOR internalResistor,
+                               DL_GPIO_DRIVE_STRENGTH strength,
+                               DL_GPIO_HIZ impedence);
+
+void setPinsPolarity(GPIO_Regs*Port, uint32_t polarity);
+
+void clearintteruptstatus(GPIO_Regs*Port, uint32_t Pin);
+
+void enableintterupt(GPIO_Regs*Port, uint32_t Pin);
+
+uint32_t getEnabledInterruptStatus(GPIO_Regs* gpio, uint32_t pins) ;
+
+
+#endif /* LIB_BAREMETAL_H_ */

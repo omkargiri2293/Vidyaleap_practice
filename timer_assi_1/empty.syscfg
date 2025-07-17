@@ -1,0 +1,73 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "MSPM0G350X" --part "Default" --package "LQFP-64(PM)" --product "mspm0_sdk@2.03.00.08"
+ * @v2CliArgs --device "MSPM0G3507" --package "LQFP-64(PM)" --product "mspm0_sdk@2.03.00.08"
+ * @versions {"tool":"1.22.0+3893"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO   = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const GPIO1  = GPIO.addInstance();
+const GPIO2  = GPIO.addInstance();
+const GPIO3  = GPIO.addInstance();
+const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
+const TIMER  = scripting.addModule("/ti/driverlib/TIMER", {}, false);
+const TIMER1 = TIMER.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.port                          = "PORTA";
+GPIO1.$name                         = "GPIO_SW_1";
+GPIO1.associatedPins[0].$name       = "PIN_1";
+GPIO1.associatedPins[0].direction   = "INPUT";
+GPIO1.associatedPins[0].assignedPin = "18";
+GPIO1.associatedPins[0].interruptEn = true;
+GPIO1.associatedPins[0].polarity    = "RISE_FALL";
+
+const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
+
+GPIO2.port                               = "PORTB";
+GPIO2.$name                              = "GPIO_SW_2";
+GPIO2.associatedPins[0].$name            = "PIN_2";
+GPIO2.associatedPins[0].direction        = "INPUT";
+GPIO2.associatedPins[0].internalResistor = "PULL_UP";
+GPIO2.associatedPins[0].assignedPin      = "21";
+GPIO2.associatedPins[0].interruptEn      = true;
+GPIO2.associatedPins[0].polarity         = "RISE_FALL";
+
+GPIO3.$name                         = "GPIO_LEDS";
+GPIO3.port                          = "PORTA";
+GPIO3.associatedPins.create(2);
+GPIO3.associatedPins[0].assignedPin = "0";
+GPIO3.associatedPins[0].$name       = "USER_LED_1";
+GPIO3.associatedPins[0].invert      = "ENABLE";
+GPIO3.associatedPins[1].$name       = "USER_TEST";
+GPIO3.associatedPins[1].assignedPin = "15";
+
+SYSCTL.forceDefaultClkConfig = true;
+
+TIMER1.$name               = "TIMER_0";
+TIMER1.timerClkSrc         = "LFCLK";
+TIMER1.timerMode           = "PERIODIC_UP";
+TIMER1.enableRepeatCounter = true;
+TIMER1.interrupts          = ["ZERO"];
+TIMER1.timerPeriod         = "10ms";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+GPIO1.associatedPins[0].pin.$suggestSolution = "PA18";
+Board.peripheral.$suggestSolution            = "DEBUGSS";
+Board.peripheral.swclkPin.$suggestSolution   = "PA20";
+Board.peripheral.swdioPin.$suggestSolution   = "PA19";
+GPIO2.associatedPins[0].pin.$suggestSolution = "PB21";
+GPIO3.associatedPins[0].pin.$suggestSolution = "PA0";
+GPIO3.associatedPins[1].pin.$suggestSolution = "PA15";
+SYSCTL.peripheral.$suggestSolution           = "SYSCTL";
+TIMER1.peripheral.$suggestSolution           = "TIMA0";

@@ -1,0 +1,3 @@
+"./timer_assi_4.o"
+-ldevice.cmd.genlibs
+-llibc.a

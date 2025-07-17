@@ -1,0 +1,3 @@
+"./empty.o"
+-ldevice.cmd.genlibs
+-llibc.a
